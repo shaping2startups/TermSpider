@@ -5,7 +5,7 @@ class TermSpider(scrapy.Spider):
     allowed_domains = ['google.com']
 
     def start_requests(self):
-        with open('urls.csv') as file:
+        with open('urls.csv', 'r', encoding='utf8') as file:
             for line in file.readlines():
                 yield scrapy.Request(line.strip())
     
